@@ -18,10 +18,36 @@ return {
     name = 'catppuccin',
     priority = 1000,
     config = function()
+      require('catppuccin').setup {
+        transparent_background = true,
+        auto_integrations = true,
+        float = {
+          transparent = true,
+          solid = false,
+        },
+      }
       vim.cmd.colorscheme 'catppuccin'
-      -- Transparent background
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {}
+    end,
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('bufferline').setup {}
     end,
   },
 }
