@@ -861,6 +861,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports', 'gofmt' },
+        php = { 'php_cs_fixer' },
         graphql = { 'prettier' },
         typescript = { 'prettier' },
         javascript = { 'prettier' },
