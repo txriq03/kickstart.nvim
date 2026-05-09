@@ -669,6 +669,7 @@ do
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     ts_ls = {},
+    phpactor = {},
 
     stylua = {}, -- Used to format Lua code
 
@@ -727,6 +728,8 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
+    'phpactor',
+    'php-cs-fixer',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -751,6 +754,7 @@ do
       local enabled_filetypes = {
         -- lua = true,
         -- python = true,
+        php = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
@@ -769,6 +773,7 @@ do
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      php = { 'php_cs_fixer' },
     },
   }
 
