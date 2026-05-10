@@ -8,6 +8,9 @@ require('catppuccin').setup {
     neo_tree = true,
     telescope = true,
     which_key = true,
+    snacks = {
+      enabled = true
+    }
   },
 }
 
