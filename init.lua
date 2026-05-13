@@ -773,7 +773,10 @@ do
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+      typescript = { 'prettierd', 'prettier', stop_after_first = true },
+      typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
       php = { 'php_cs_fixer' },
     },
   }
@@ -797,8 +800,8 @@ do
   --    See the README about individual language/framework/plugin snippets:
   --    https://github.com/rafamadriz/friendly-snippets
   --
-  -- vim.pack.add { gh 'rafamadriz/friendly-snippets' }
-  -- require('luasnip.loaders.from_vscode').lazy_load()
+  vim.pack.add { gh 'rafamadriz/friendly-snippets' }
+  require('luasnip.loaders.from_vscode').lazy_load()
 
   -- [[ Autocomplete Engine ]]
   vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' } }
