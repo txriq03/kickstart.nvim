@@ -712,6 +712,7 @@ do
         },
       },
     },
+    tailwindcss = {},
     phpactor = {},
 
     stylua = {}, -- Used to format Lua code
@@ -773,6 +774,7 @@ do
     -- You can add other tools here that you want Mason to install
     'phpactor',
     'php-cs-fixer',
+    'blade-formatter',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -782,6 +784,14 @@ do
     vim.lsp.enable(name)
   end
 end
+
+-- Laravel / Blade files use their own filetype, which feeds LSP, Treesitter,
+-- and formatter setup below.
+vim.filetype.add {
+  pattern = {
+    ['.*%.blade%.php'] = 'blade',
+  },
+}
 
 -- ============================================================
 -- SECTION 6: FORMATTING
@@ -798,6 +808,7 @@ do
         -- lua = true,
         -- python = true,
         php = true,
+        blade = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
@@ -820,6 +831,7 @@ do
       typescript = { 'prettierd', 'prettier', stop_after_first = true },
       typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
       php = { 'php_cs_fixer' },
+      blade = { 'blade-formatter' },
     },
   }
 
@@ -926,6 +938,7 @@ do
     'bash',
     'c',
     'diff',
+    'blade',
     'html',
     'javascript',
     'lua',
