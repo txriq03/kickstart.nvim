@@ -7,6 +7,7 @@ Snacks.setup {
   indent = { enabled = true },
   input = { enabled = true },
   lazygit = { enabled = true },
+  image = { enabled = true },
   notifier = {
     enabled = true,
     timeout = 3000,
