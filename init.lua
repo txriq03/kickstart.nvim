@@ -717,6 +717,7 @@ do
       },
     },
     tailwindcss = {},
+    cssls = {},
     phpactor = {},
 
     stylua = {}, -- Used to format Lua code
