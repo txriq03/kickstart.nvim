@@ -483,9 +483,9 @@ do
   local builtin = require 'telescope.builtin'
   local find_files = function(opts)
     opts = opts or {}
-    opts.hidden = true
-    opts.no_ignore = true
-    opts.no_ignore_parent = true
+    opts.hidden = false
+    opts.no_ignore = false
+    opts.no_ignore_parent = false
     builtin.find_files(opts)
   end
   vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
