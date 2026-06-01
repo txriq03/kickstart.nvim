@@ -716,6 +716,9 @@ do
         },
       },
     },
+    html = {
+      filetypes = { 'html', 'blade' },
+    },
     tailwindcss = {},
     cssls = {},
     phpactor = {},
