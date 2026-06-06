@@ -840,6 +840,8 @@ do
       typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
       php = { 'php_cs_fixer' },
       blade = { 'blade-formatter' },
+      html = { 'prettierd', 'prettier', stop_after_first = true },
+      css = { 'prettierd', 'prettier', stop_after_first = true },
     },
   }
 
