@@ -30,6 +30,6 @@ end, { desc = 'OpenCode start server' })
 
 pcall(function()
   require('which-key').add({
-    { '<leader>o', group = 'Opencode' },
+    { '<leader>o', group = 'Opencode', mode = { 'n', 'x' } },
   })
 end)
