@@ -9,7 +9,7 @@ vim.g.opencode_opts = vim.g.opencode_opts or {}
 local opencode = require 'opencode'
 
 vim.keymap.set({ 'n', 'x' }, '<leader>oa', function()
-  opencode.ask()
+  opencode.ask('@this: ', { submit = true })
 end, { desc = 'OpenCode ask' })
 
 vim.keymap.set('n', '<leader>os', function()
