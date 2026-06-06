@@ -17,6 +17,20 @@ Snacks.setup {
   scroll = { enabled = true },
   statuscolumn = { enabled = true },
   words = { enabled = true },
+  picker = {
+    actions = {
+      opencode_send = function(picker)
+        return require('opencode').snacks_picker_send(picker)
+      end,
+    },
+    win = {
+      input = {
+        keys = {
+          ['<a-o>'] = { 'opencode_send', mode = { 'n', 'i' } },
+        },
+      },
+    },
+  },
   dashboard = {
     enabled = true,
     sections = {
