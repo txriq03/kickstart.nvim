@@ -814,9 +814,10 @@ do
       -- You can specify filetypes to autoformat on save here:
       local enabled_filetypes = {
         -- lua = true,
-        -- python = true,
-        php = true,
-        blade = true,
+        python = true,
+        -- php = true,
+        -- blade = true,
+        vue = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
@@ -841,6 +842,7 @@ do
       php = { 'php_cs_fixer' },
       blade = { 'blade-formatter' },
       html = { 'prettierd', 'prettier', stop_after_first = true },
+      vue = { 'prettierd', 'prettier', stop_after_first = true },
       css = { 'prettierd', 'prettier', stop_after_first = true },
     },
   }

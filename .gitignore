@@ -13,3 +13,5 @@ nvim-pack-lock.json
 
 .DS_Store
 nvim.log
+inbox.txt.tuxedo-lock
+todo.txt
