@@ -1,6 +1,14 @@
 vim.pack.add { 'https://github.com/sindrets/diffview.nvim' }
 
-require('diffview').setup {}
+local actions = require('diffview.actions')
+
+require('diffview').setup {
+  hooks = {
+    view_opened = function()
+      actions.toggle_files()
+    end,
+  },
+}
 
 vim.keymap.set('n', '<leader>do', '<cmd>DiffviewOpen<CR>', { desc = '[D]iffview [O]pen' })
 vim.keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory<CR>', { desc = '[D]iffview File [H]istory' })
